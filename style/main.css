@@ -1,0 +1,41 @@
+/* $green: #064705 */
+/* $red: #f00 */
+
+html, body {
+    background-color: #064705;
+}
+
+.poker-field {
+    border-collapse: collapse;
+}
+
+.cell {
+    min-width: 50px;
+    padding: 5px;
+    border: 3px solid #fff;
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+}
+.cell--red {
+    background: #f00;
+}
+.cell--black {
+    background: #000;
+}
+
+.diamond {
+    margin: 5px auto;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+.diamond--red {
+    background: #f00;
+}
+
+.diamond--black {
+    background: #000;
+}
