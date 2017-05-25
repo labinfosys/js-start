@@ -1,41 +1,25 @@
 /* $green: #064705 */
 /* $red: #f00 */
+@import "poker-field.css";
+@import "chips.css";
 
 html, body {
     background-color: #064705;
 }
 
-.poker-field {
-    border-collapse: collapse;
+.control-panel {
+    display: flex;
 }
 
-.cell {
-    min-width: 50px;
-    padding: 5px;
-    border: 3px solid #fff;
-    color: #fff;
-    font-size: 30px;
-    text-align: center;
-}
-.cell--red {
-    background: #f00;
-}
-.cell--black {
-    background: #000;
+.control-panel__roulette {
+    padding: 15px;
 }
 
-.diamond {
-    margin: 5px auto;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #fff;
-    transform: rotate(45deg);
+.number-list, .chips-list {
+    display: flex;
+    list-style: none;
 }
 
-.diamond--red {
-    background: #f00;
-}
+.number-list li, .chips-list li {
 
-.diamond--black {
-    background: #000;
 }

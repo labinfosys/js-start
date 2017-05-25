@@ -8,74 +8,102 @@
     <title>JS-Start</title>
 </head>
 <body>
-    <table class="poker-field">
-        <tr>
-            <td class="cell" rowspan="3">0</td>
-            <td class="cell cell--red">3</td>
-            <td class="cell cell--black">6</td>
-            <td class="cell cell--red">9</td>
-            <td class="cell cell--red">12</td>
-            <td class="cell cell--black">15</td>
-            <td class="cell cell--red">18</td>
-            <td class="cell cell--red">21</td>
-            <td class="cell cell--black">24</td>
-            <td class="cell cell--red">27</td>
-            <td class="cell cell--red">30</td>
-            <td class="cell cell--black">33</td>
-            <td class="cell cell--red">36</td>
-            <td class="cell">2-1</td>
-        </tr>
-        <tr>
-            <td class="cell cell--black">2</td>
-            <td class="cell cell--red">5</td>
-            <td class="cell cell--black">8</td>
-            <td class="cell cell--black">11</td>
-            <td class="cell cell--red">14</td>
-            <td class="cell cell--black">17</td>
-            <td class="cell cell--black">20</td>
-            <td class="cell cell--red">23</td>
-            <td class="cell cell--black">26</td>
-            <td class="cell cell--black">29</td>
-            <td class="cell cell--red">32</td>
-            <td class="cell cell--black">35</td>
-            <td class="cell">2-1</td>
-        </tr>
-        <tr>
-            <td class="cell cell--red">1</td>
-            <td class="cell cell--black">4</td>
-            <td class="cell cell--red">7</td>
-            <td class="cell cell--black">10</td>
-            <td class="cell cell--black">13</td>
-            <td class="cell cell--red">16</td>
-            <td class="cell cell--red">19</td>
-            <td class="cell cell--black">22</td>
-            <td class="cell cell--red">25</td>
-            <td class="cell cell--black">28</td>
-            <td class="cell cell--black">31</td>
-            <td class="cell cell--red">34</td>
-            <td class="cell">2-1</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td class="cell" colspan="4">1st 12</td>
-            <td class="cell" colspan="4">2nd 12</td>
-            <td class="cell" colspan="4">3rd 12</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td class="cell" colspan="2">1-18</td>
-            <td class="cell" colspan="2">EVEN</td>
-            <td class="cell" colspan="2">
-                <div class="diamond diamond--red"></div>
-            </td>
-            <td class="cell" colspan="2">
-                <div class="diamond diamond--black"></div>
-            </td>
-            <td class="cell" colspan="2">ODD</td>
-            <td class="cell" colspan="2">19-36</td>
-            <td></td>
-        </tr>
-    </table>
+    <section class="main">
+        <div class="control-panel">
+            <div class="control-panel__roulette">
+                <img src="assets/img/roulette.png" alt="">
+            </div>
+            <div class="control-panel__tools">
+                <ul class="number-list">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                </ul>
+                <ul class="chips-list">
+                    <li class="chips chips-list__chips chips--1"></li>
+                    <li class="chips chips-list__chips chips--5"></li>
+                    <li class="chips chips-list__chips chips--10"></li>
+                    <li class="chips chips-list__chips chips--50"></li>
+                    <li class="chips chips-list__chips chips--100"></li>
+                </ul>
+            </div>
+        </div>
+        <table class="poker-field">
+            <tr>
+                <td class="cell" rowspan="3">0</td>
+                <td class="cell cell--red">3</td>
+                <td class="cell cell--black">6</td>
+                <td class="cell cell--red">9</td>
+                <td class="cell cell--red">12</td>
+                <td class="cell cell--black">15</td>
+                <td class="cell cell--red">18</td>
+                <td class="cell cell--red">21</td>
+                <td class="cell cell--black">24</td>
+                <td class="cell cell--red">27</td>
+                <td class="cell cell--red">30</td>
+                <td class="cell cell--black">33</td>
+                <td class="cell cell--red">36</td>
+                <td class="cell">2-1</td>
+            </tr>
+            <tr>
+                <td class="cell cell--black">2</td>
+                <td class="cell cell--red">5</td>
+                <td class="cell cell--black">8</td>
+                <td class="cell cell--black">11</td>
+                <td class="cell cell--red">14</td>
+                <td class="cell cell--black">17</td>
+                <td class="cell cell--black">20</td>
+                <td class="cell cell--red">23</td>
+                <td class="cell cell--black">26</td>
+                <td class="cell cell--black">29</td>
+                <td class="cell cell--red">32</td>
+                <td class="cell cell--black">35</td>
+                <td class="cell">2-1</td>
+            </tr>
+            <tr>
+                <td class="cell cell--red">1</td>
+                <td class="cell cell--black">4</td>
+                <td class="cell cell--red">7</td>
+                <td class="cell cell--black">10</td>
+                <td class="cell cell--black">13</td>
+                <td class="cell cell--red">16</td>
+                <td class="cell cell--red">19</td>
+                <td class="cell cell--black">22</td>
+                <td class="cell cell--red">25</td>
+                <td class="cell cell--black">28</td>
+                <td class="cell cell--black">31</td>
+                <td class="cell cell--red">34</td>
+                <td class="cell">2-1</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="cell" colspan="4">1st 12</td>
+                <td class="cell" colspan="4">2nd 12</td>
+                <td class="cell" colspan="4">3rd 12</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="cell" colspan="2">1-18</td>
+                <td class="cell" colspan="2">EVEN</td>
+                <td class="cell" colspan="2">
+                    <div class="diamond diamond--red"></div>
+                </td>
+                <td class="cell" colspan="2">
+                    <div class="diamond diamond--black"></div>
+                </td>
+                <td class="cell" colspan="2">ODD</td>
+                <td class="cell" colspan="2">19-36</td>
+                <td></td>
+            </tr>
+        </table>
+    </section>
 </body>
 </html>
