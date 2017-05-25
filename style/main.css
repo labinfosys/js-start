@@ -2,6 +2,7 @@
 /* $red: #f00 */
 @import "poker-field.css";
 @import "chips.css";
+@import "numbers.css";
 
 html, body {
     background-color: #064705;
@@ -15,11 +16,18 @@ html, body {
     padding: 15px;
 }
 
+.control-panel__tools {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
 .number-list, .chips-list {
     display: flex;
     list-style: none;
 }
 
-.number-list li, .chips-list li {
-
+.chips-list .chips {
+    margin-right: 5px;
 }
