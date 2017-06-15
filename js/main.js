@@ -41,6 +41,13 @@ function getChildByClassName(el, className) {
     return result;
 }
 
+function clearRates() {
+    var cells = document.querySelectorAll('.cell > ul');
+    cells.forEach(function(el) {
+        el.innerHTML = '';
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     var btnStart = document.querySelector('#start');
     var chips = document.querySelectorAll('.chips-list__chips');
@@ -71,7 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
         list.appendChild(chips);
         cell.appendChild(list);
     };
+    clearRates();
     btnStart.addEventListener('click', function() {
+        clearRates();
         deactivateChips();
         addNumber();
     });
