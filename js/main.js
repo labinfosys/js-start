@@ -70,9 +70,12 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     // Функция активации фишки
     var activateChips = function(el) {
+        var chipsValue = parseInt(el.getAttribute('data-value'));
         deactivateChips();
-        el.classList.add('chips-list__chips--active');
-        currentChipsValue = parseInt(el.getAttribute('data-value'));
+        if (accountVal - chipsValue >= 0) {
+            el.classList.add('chips-list__chips--active');
+            currentChipsValue = chipsValue;
+        }
     };
     // Установка активной фишки в ячейку
     var addChips = function(cell) {
@@ -107,6 +110,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 accountVal = balance;
                 rateVal = rateVal + currentChipsValue;
                 updateInfo();
+            } else {
+                deactivateChips();
             }
         });
     });
