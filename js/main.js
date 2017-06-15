@@ -26,3 +26,8 @@ function addNumber() {
         nums.pop();
     console.log(nums);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    var btnStart = document.querySelector('#start');
+    btnStart.addEventListener('click', addNumber);
+});
