@@ -28,20 +28,48 @@ function addNumber() {
     console.log(nums);
 }
 
+function getChildByClassName(el, className) {
+    var children = [];
+    var result = null;
+    el.childNodes.forEach(function(child) {
+        if (child.classList !== undefined && child.classList.contains(className) > 0) {
+            children.push(child);
+        }
+    });
+    if (children.length > 0)
+        result = children.shift();
+    return result;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     var btnStart = document.querySelector('#start');
     var chips = document.querySelectorAll('.chips-list__chips');
+    var cells = document.querySelectorAll('.cell');
     // Очистка активных фишек
     var deactivateChips = function() {
         chips.forEach(function(el) {
             el.classList.remove('chips-list__chips--active');
         });
+        currentChipsValue = null;
     };
-    // Функция активации 
+    // Функция активации фишки
     var activateChips = function(el) {
         deactivateChips();
         el.classList.add('chips-list__chips--active');
         currentChipsValue = el.getAttribute('data-value');
+    };
+    // Установка активной фишки в ячейку
+    var addChips = function(cell) {
+        if (currentChipsValue === null) return;
+        var list = getChildByClassName(cell, 'chips-list');
+        var chips = document.createElement('li');
+        chips.className = 'chips chips--' + currentChipsValue;
+        if (list === null) {
+            list = document.createElement('ul');
+            list.classList.add('chips-list');
+        }
+        list.appendChild(chips);
+        cell.appendChild(list);
     };
     btnStart.addEventListener('click', function() {
         deactivateChips();
@@ -50,6 +78,12 @@ document.addEventListener('DOMContentLoaded', function() {
     chips.forEach(function(el) {
         el.addEventListener('click', function() {
             activateChips(el);
+        });
+    });
+    cells.forEach(function(el) {
+        el.addEventListener('click', function() {
+            addChips(el);
+            // console.log(el.textContent.trim());
         });
     });
 });
