@@ -1,5 +1,7 @@
 var nums = [];
 var currentChipsValue = null;
+var accountVal = 500;
+var rateVal = 0;
 
 function getNumber() {
     return Math.round(Math.random() * 36);
@@ -48,6 +50,13 @@ function clearRates() {
     });
 }
 
+function updateInfo() {
+    var account = document.querySelector('.control-panel__account');
+    var rate = document.querySelector('.control-panel__rate');
+    account.innerHTML = accountVal;
+    rate.innerHTML = rateVal;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     var btnStart = document.querySelector('#start');
     var chips = document.querySelectorAll('.chips-list__chips');
@@ -63,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var activateChips = function(el) {
         deactivateChips();
         el.classList.add('chips-list__chips--active');
-        currentChipsValue = el.getAttribute('data-value');
+        currentChipsValue = parseInt(el.getAttribute('data-value'));
     };
     // Установка активной фишки в ячейку
     var addChips = function(cell) {
@@ -79,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cell.appendChild(list);
     };
     clearRates();
+    updateInfo();
     btnStart.addEventListener('click', function() {
         clearRates();
         deactivateChips();
@@ -91,8 +101,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     cells.forEach(function(el) {
         el.addEventListener('click', function() {
-            addChips(el);
-            // console.log(el.textContent.trim());
+            var balance = accountVal - currentChipsValue;
+            if (balance >= 0) {
+                addChips(el);
+                accountVal = balance;
+                rateVal = rateVal + currentChipsValue;
+                updateInfo();
+            }
         });
     });
 });
