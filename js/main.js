@@ -96,6 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
         clearRates();
         deactivateChips();
         addNumber();
+        rateVal = 0;
+        updateInfo();
     });
     chips.forEach(function(el) {
         el.addEventListener('click', function() {
