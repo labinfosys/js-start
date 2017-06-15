@@ -76,6 +76,11 @@
     opacity: .5;
     cursor: pointer;
 }
+
+.chips-list .chips-list__chips--active {
+    opacity: 1;
+}
+
 /*.cell .chips-list .chips:nth-child(2n) {
     top: -50px;
     left: 5px;

@@ -1,4 +1,5 @@
 var nums = [];
+var currentChipsValue = null;
 
 function getNumber() {
     return Math.round(Math.random() * 36);
@@ -29,5 +30,26 @@ function addNumber() {
 
 document.addEventListener('DOMContentLoaded', function() {
     var btnStart = document.querySelector('#start');
-    btnStart.addEventListener('click', addNumber);
+    var chips = document.querySelectorAll('.chips-list__chips');
+    // Очистка активных фишек
+    var deactivateChips = function() {
+        chips.forEach(function(el) {
+            el.classList.remove('chips-list__chips--active');
+        });
+    };
+    // Функция активации 
+    var activateChips = function(el) {
+        deactivateChips();
+        el.classList.add('chips-list__chips--active');
+        currentChipsValue = el.getAttribute('data-value');
+    };
+    btnStart.addEventListener('click', function() {
+        deactivateChips();
+        addNumber();
+    });
+    chips.forEach(function(el) {
+        el.addEventListener('click', function() {
+            activateChips(el);
+        });
+    });
 });
