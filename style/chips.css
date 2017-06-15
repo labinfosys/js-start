@@ -72,6 +72,10 @@
     left: 0;
 }
 
+.chips-list .chips-list__chips {
+    opacity: .5;
+    cursor: pointer;
+}
 /*.cell .chips-list .chips:nth-child(2n) {
     top: -50px;
     left: 5px;
