@@ -10,6 +10,8 @@ html, body {
 
 .control-panel {
     display: flex;
+    color: #fff;
+    font-size: 18px;
 }
 
 .control-panel__roulette {
