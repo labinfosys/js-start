@@ -46,7 +46,7 @@ function getChildByClassName(el, className) {
 function clearRates() {
     var cells = document.querySelectorAll('.cell > ul');
     cells.forEach(function(el) {
-        el.innerHTML = '';
+        el.remove();
     });
 }
 
